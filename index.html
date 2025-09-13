@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HZC 33</title>
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e22;
+      color: #fff;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover{
+      color:#FF9E3D;
+    }
+
+    button:hover{
+      cursor: pointer;
+    }
+
+
+    /* CONTAINER CENTRAL */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER */
+    header {
+      background: #111;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .hero .banner {
+      flex: 2;
+      background: #f5c518;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      min-height: 250px;
+    }
+
+    .hero .videos {
+      flex: 1;
+      background: #111;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .videos h3 {
+      margin-top: 0;
+    }
+
+    .video-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .video-item img {
+      margin-right: 10px;
+      border-radius: 4px;
+      width: 48px;
+      height: 48px;
+    }
+
+    /* PRODUTOS */
+    .produtos {
+      padding: 30px 0;
+    }
+
+    .produtos h2 {
+      margin-bottom: 20px;
+    }
+
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .produto {
+      background: #fff;
+      color: #000;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden; /* garante que tudo respeite os cantos arredondados */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .produto img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+      transition: opacity 0.3s ease; /* efeito suave */
+    }
+
+    .produto:hover .produto-img {
+      content: attr(data-hover); /* não funciona no img diretamente */
+      opacity: 0; /* esconde a imagem original */
+    }
+
+    .produto-img-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .produto:hover .produto-img-hover {
+      opacity: 1;
+    }
+
+    .produto-info {
+      background: #111;
+      color: #fff;
+      padding: 12px;
+    }
+
+    .produto-info h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .produto-info p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    /* FOOTER */
+    footer {
+      width: 100%;
+      background: url("img/bg-footer.png") center/contain no-repeat, #111; /* cor por baixo */
+      background-size: auto; /* não escala, só centraliza */
+      height: 224px;
+      padding-top: 40px;
+      display: flex;
+      align-items: center;   /* centraliza verticalmente */
+      justify-content: center; /* centraliza horizontalmente */
+    }
+
+.footer-content {
+  max-width: 1120px;  /* centraliza junto com o resto do site */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content img {
+  max-height: 80px; /* ajusta o tamanho do logo */
+}
+
+    @media (max-width: 900px) {
+      .grid-produtos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .grid-produtos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo"><img src="img/header-logo.png"></div>
+      <nav>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div class="banner">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ta-bo4j0hjM?si=dhmkOmKEKZBneyy_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <aside class="videos">
+      <h3>Outros vídeos</h3>
+      <a href="https://youtu.be/-KpyGwiERcg?si=ssWrGNIM_JzAJKDS" target="_blank">
+        <div class="video-item">
+          <img src="img/thumb4.png" alt="video 1">
+          <span>HZC - Greenmonk Parte 1 (2024)</span>
+        </div>
+      </a>
+      <a href="youtube.com/watch?v=AHEm8ou7O7c&t=877s" target="_blank">
+        <div class="video-item">
+          <img src="img/thumb1.png" alt="video 1">
+          <span>HZC - Smoke Machine (2012)</span>
+        </div>
+      </a>
+      <a href="https://youtu.be/H5PZ9P1hoAU?si=2nMQdI23LMq-hP6Y" target="_blank">
+        <div class="video-item">
+          <img src="img/thumb3.png" alt="video 1">
+          <span>HZC - Enter the Hu-Flez! 33 Dompas (2016)</span>
+        </div>
+      </a>
+      <a href="https://youtu.be/kZD0rc398WM?si=cIabCB1ahkCrpooG" target="_blank">
+        <div class="video-item">
+          <img src="img/thumb2.png" alt="video 1">
+          <span>HZC - Tudo Sem Padrin (2018)</span>
+        </div>
+      </a>
+      <a href="https://youtu.be/nbkzXgV8uyM?si=H5LvTlhHvWRF-9y1" target="_blank">
+        <div class="video-item">
+          <img src="img/thumb5.png" alt="video 1">
+          <span>HZC - Huflez Presente (2021)</span>
+        </div>
+      </a>
+      <a href="https://youtu.be/Conn3tyo5Sk?si=aseh_1jvUwcj8EFP" target="_blank">
+        <div class="video-item">
+          <img src="img/thumb6.png" alt="video 1">
+          <span>Glimó Agradece às ruas (2025)</span>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/@HZCRIO/videos" target="_blank"><button>Ver todos</button></a>
+    </aside>
+  </section>
+
+ <!-- PRODUTOS -->
+<section class="produtos container">
+  <h2>Produtos</h2>
+  <div class="grid-produtos">
+    
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/frango.png" alt="Shape Frango" class="produto-img">
+        <img src="img/frango-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Frango HZC</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/bagre.png" alt="Shape Frango" class="produto-img">
+        <img src="img/bagre-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Bagre cana</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/churras.png" alt="Shape Frango" class="produto-img">
+        <img src="img/churras-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Huflez Grill</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/frango.png" alt="Shape Frango" class="produto-img">
+        <img src="img/frango-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Frango HZC</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/bagre.png" alt="Shape Frango" class="produto-img">
+        <img src="img/bagre-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Bagre cana</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/churras.png" alt="Shape Frango" class="produto-img">
+        <img src="img/churras-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Huflez Grill</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/frango.png" alt="Shape Frango" class="produto-img">
+        <img src="img/frango-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Frango HZC</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/bagre.png" alt="Shape Frango" class="produto-img">
+        <img src="img/bagre-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Bagre cana</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/churras.png" alt="Shape Frango" class="produto-img">
+        <img src="img/churras-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Huflez Grill</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/frango.png" alt="Shape Frango" class="produto-img">
+        <img src="img/frango-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Frango HZC</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/bagre.png" alt="Shape Frango" class="produto-img">
+        <img src="img/bagre-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Bagre cana</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://produto.mercadolivre.com.br/MLB-4106548829-shape-marfim-black-sheep-tattooart-_JM?searchVariation=188655488165#polycard_client=search-nordic&searchVariation=188655488165&search_layout=stack&position=3&type=item&tracking_id=fc9c7dcf-1130-4e05-94c0-bfd676af6b2c" class="block" target="_blank">
+      <div class="produto">
+        <img src="img/churras.png" alt="Shape Frango" class="produto-img">
+        <img src="img/churras-hover.png" alt="Shape Frango Hover" class="produto-img-hover">
+        <div class="produto-info">
+          <h3>Huflez Grill</h3>
+          <p>R$ 333,33</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <img src="img/logo-footer.png" alt="HZC Logo">
+  </div>
+</footer>
+</body>
+</html>
